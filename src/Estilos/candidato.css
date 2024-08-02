@@ -100,13 +100,34 @@
     height: 100%;
     position: absolute;
     left: 0;
+    overflow: hidden;
     animation: aa 1s forwards;
 }                       
 
+.expansion{
+    height: 0px;
+    width: 0px;
+    background-color: rgba(255, 255, 255, 0.568);
+    position: absolute;
+    border-radius: 50%;
+}
+
+.animacionexpansion{
+    animation: expandirondavoto .4s ease-in;
+}
+
+@keyframes expandirondavoto{
+    0%{background-color: inherit;}
+    100%{
+        width: 250px;
+        height: 250px;
+        background-color: rgba(255, 255, 255, 0.6);
+    }
+}
 
 
 .lalibertadavanza{
-    background-color: purple;
+    background-color:purple;
 }
 
 .unionporlapatria{

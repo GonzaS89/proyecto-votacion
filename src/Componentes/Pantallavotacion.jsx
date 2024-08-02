@@ -50,7 +50,8 @@ const Pantallavotacion = () => {
           imagen={candidato.imagen}
           totalVotos = {totalVotos}
           votosMilei = {votosMilei}
-          votosMassa = {votosMassa}/>
+          votosMassa = {votosMassa}
+          id = {id}/>
         ))}
       </div>
       {/* <p className={condicionVotosTotales ? 'votostotales zoomearvotostotales' : 'votostotales'}>{totalVotos}</p> */}

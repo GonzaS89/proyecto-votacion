@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState ,  useEffect } from "react";
 import { motion } from 'framer-motion';
 import "../Estilos/candidato.css";
 
@@ -6,12 +6,21 @@ import "../Estilos/candidato.css";
 const Resultadoporcandidato = (props) => {
 
   const [votos, setVotos] = useState(0);
+  const [confirmacionVoto , setConfirmacionVoto] = useState(false);
 
   const aumentarVotos = () => {
     setVotos(votos + 1);
   };
 
   let porcentaje;
+
+  useEffect(() => {
+    props.id === props.nombre &&
+    setConfirmacionVoto(true)
+    setTimeout(() => {
+      setConfirmacionVoto(false)
+    }, 410);
+  },[props.votosMilei , props.votosMassa])
 
 
   const definirCandidato = (candidato) => {
@@ -59,7 +68,9 @@ const Resultadoporcandidato = (props) => {
             initial={{ width: '0%' }}
             transition={{ duration: .25, ease: "backInOut" }}
             animate={{ width: `${porcentaje}%` }}
-          ></motion.div>
+          >
+            <div className={confirmacionVoto ? 'expansion animacionexpansion' : 'expansion'}></div>
+          </motion.div>
         </div>
       </div>
     </div>
