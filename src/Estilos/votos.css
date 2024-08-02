@@ -1,0 +1,15 @@
+.boleta-container{
+    display: flex;
+    justify-content: center;
+    width: 120px;
+    height: 180px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    cursor: pointer;
+    gap: 20px;
+
+    && IMG {
+        width: 100%;
+        border-radius: inherit;
+    }
+}

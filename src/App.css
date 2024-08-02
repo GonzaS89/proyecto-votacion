@@ -1,0 +1,11 @@
+.App {
+  text-align: center;
+  background-color: #EEEEEE;
+  padding: 25px;
+  height: 100vh;
+  position: relative;
+}
+
+.titulo-app{
+  text-transform: uppercase;
+}
