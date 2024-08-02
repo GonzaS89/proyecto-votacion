@@ -6,7 +6,7 @@
     gap: 50px;
 }
 
-@media(max-width: 360px) {
+@media(max-width: 500px) {
   .boletas-container{
     width: 100%;
   }

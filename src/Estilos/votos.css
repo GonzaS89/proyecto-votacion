@@ -13,3 +13,9 @@
         border-radius: inherit;
     }
 }
+
+@media (max-width:360px) {
+    .boleta-container{
+        width: 100%;
+    }
+}
