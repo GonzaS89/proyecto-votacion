@@ -12,7 +12,7 @@ const Pantallavotacion = () => {
     const [totalVotos , setTotalVotos] = useState(0);
     const [votosMilei , setVotosMilei] = useState(0);
     const [votosMassa , setVotosMassa] = useState(0);
-    const [condicionVotosTotales, setCondicionVotosTotales] = useState(false);
+    // const [condicionVotosTotales, setCondicionVotosTotales] = useState(false);
 
     const [id , setID] = useState('');
 
@@ -20,9 +20,9 @@ const Pantallavotacion = () => {
       setTotalVotos(votosMilei + votosMassa)
     },[votosMilei , votosMassa]);
 
-    useEffect(() => {
-      totalVotos > 0 && setCondicionVotosTotales(true)
-    },[totalVotos])
+    // useEffect(() => {
+    //   totalVotos > 0 && setCondicionVotosTotales(true)
+    // },[totalVotos])
 
 
     const recibirId = (id) => {
@@ -32,13 +32,13 @@ const Pantallavotacion = () => {
         setVotosMassa(votosMassa + 1);
       }
 
-      useEffect(() => {
-        totalVotos > 0 &&
-        setCondicionVotosTotales(true);
-        setTimeout(() => {
-          setCondicionVotosTotales(false);
-        }, 750);
-      },[totalVotos])
+      // useEffect(() => {
+      //   totalVotos > 0 &&
+      //   setCondicionVotosTotales(true);
+      //   setTimeout(() => {
+      //     setCondicionVotosTotales(false);
+      //   }, 750);
+      // },[totalVotos])
 
 
     return (
