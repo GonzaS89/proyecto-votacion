@@ -53,7 +53,7 @@ const Pantallavotacion = () => {
           votosMassa = {votosMassa}/>
         ))}
       </div>
-      <p className={condicionVotosTotales ? 'votostotales zoomearvotostotales' : 'votostotales'}>{totalVotos}</p>
+      {/* <p className={condicionVotosTotales ? 'votostotales zoomearvotostotales' : 'votostotales'}>{totalVotos}</p> */}
         <>
           <div className='boletas-container'>
               {candidatos.map (candidato => (
