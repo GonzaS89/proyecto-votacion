@@ -1,4 +1,4 @@
-import { React, useState ,  useEffect } from "react";
+import { React, useState} from "react";
 import { motion } from 'framer-motion';
 import "../Estilos/candidato.css";
 
@@ -6,22 +6,19 @@ import "../Estilos/candidato.css";
 const Resultadoporcandidato = (props) => {
 
   const [votos, setVotos] = useState(0);
-  const [confirmacionVoto , setConfirmacionVoto] = useState(false);
+  // const [keyMotion , setKeyMotion] = useState();
+
+  // useEffect(() => {
+  //   props.nombre === 'javier milei' ? 
+  //   setKeyMotion(props.votosMilei) : setKeyMotion(props.votosMassa)
+  // }, [props.nombre])
 
   const aumentarVotos = () => {
+
     setVotos(votos + 1);
   };
 
   let porcentaje;
-
-  useEffect(() => {
-    props.id === props.nombre &&
-    setConfirmacionVoto(true)
-    setTimeout(() => {
-      setConfirmacionVoto(false)
-    }, 410);
-  },[props.votosMilei , props.votosMassa])
-
 
   const definirCandidato = (candidato) => {
     return (
@@ -69,7 +66,13 @@ const Resultadoporcandidato = (props) => {
             transition={{ duration: .25, ease: "backInOut" }}
             animate={{ width: `${porcentaje}%` }}
           >
-            <div className={confirmacionVoto ? 'expansion animacionexpansion' : 'expansion'}></div>
+            <motion.div className="">
+              key={props.totalVotos}
+              initial={{ backgroundColor : 'green' }}
+              animate={{ backgroundColor : 'red'}}
+              exit={{ backgroundColor : 'transparent' }}
+              transition={{ duration: .1 }}
+            </motion.div>
           </motion.div>
         </div>
       </div>
