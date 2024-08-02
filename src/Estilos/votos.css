@@ -3,7 +3,7 @@
     justify-content: center;
     width: 120px;
     height: 180px;
-    border: 1px solid grey;
+    border: 1px solid #EEEEEE;
     border-radius: 10px;
     cursor: pointer;
     gap: 20px;
@@ -16,7 +16,7 @@
 }
 
 .votoPresionado{
-    animation: reducirvoto .1s;
+    animation: reducirvoto .05s;
 }
 
 @keyframes reducirvoto {
