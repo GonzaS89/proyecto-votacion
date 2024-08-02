@@ -65,6 +65,7 @@
   position: absolute;
   font-size: 30px;
   transform: scale(0);
+  user-select: none;
 }
 
 .zoomearvotostotales{
