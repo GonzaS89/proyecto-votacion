@@ -7,15 +7,10 @@
     border-radius: 10px;
     cursor: pointer;
     gap: 20px;
+    user-select: none;
 
     && IMG {
         width: 100%;
         border-radius: inherit;
-    }
-}
-
-@media (max-width:360px) {
-    .boleta-container{
-        width: 100%;
     }
 }
