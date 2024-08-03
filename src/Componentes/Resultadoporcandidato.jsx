@@ -66,13 +66,13 @@ const Resultadoporcandidato = (props) => {
             transition={{ duration: .25, ease: "backInOut" }}
             animate={{ width: `${porcentaje}%` }}
           >
-            <motion.div className="">
+            {/* <motion.div className="">
               key={props.totalVotos}
               initial={{ backgroundColor : 'green' }}
               animate={{ backgroundColor : 'red'}}
               exit={{ backgroundColor : 'transparent' }}
               transition={{ duration: .1 }}
-            </motion.div>
+            </motion.div> */}
           </motion.div>
         </div>
       </div>
