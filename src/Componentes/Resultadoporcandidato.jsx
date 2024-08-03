@@ -1,22 +1,10 @@
-import { React, useState} from "react";
+import { React} from "react";
 import { motion } from 'framer-motion';
 import "../Estilos/candidato.css";
 
 
 const Resultadoporcandidato = (props) => {
 
-  const [votos, setVotos] = useState(0);
-  // const [keyMotion , setKeyMotion] = useState();
-
-  // useEffect(() => {
-  //   props.nombre === 'javier milei' ? 
-  //   setKeyMotion(props.votosMilei) : setKeyMotion(props.votosMassa)
-  // }, [props.nombre])
-
-  const aumentarVotos = () => {
-
-    setVotos(votos + 1);
-  };
 
   let porcentaje;
 
@@ -50,7 +38,7 @@ const Resultadoporcandidato = (props) => {
             props.votosMilei : props.votosMassa} {(props.votosMilei || props.votosMassa) > 1 || props.votosMilei || props.votosMassa === 0 ? 'votos' : 'voto'}</h3>
       </div>
       <div className="contenedor-partido">
-        <button className="contenedor-imagen" onClick={aumentarVotos}>
+        <button className="contenedor-imagen">
           <img className="imagen-partido " src={props.imagen} alt="" />
         </button>
         <div className="contenedor-barraporcentual">
