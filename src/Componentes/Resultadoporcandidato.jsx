@@ -1,66 +1,58 @@
-import { React} from "react";
+import { React , useState , useEffect } from "react";
 import { motion } from 'framer-motion';
 import "../Estilos/candidato.css";
 
 
-const Resultadoporcandidato = (props) => {
-
+const Resultadoporcandidato = ( {nombre,imagen,id,totalVotos,votosMilei,votosMassa} ) => {
 
   let porcentaje;
 
   const definirCandidato = (candidato) => {
     return (
       candidato === 'javier milei' ?
-        (props.votosMilei / props.totalVotos) * 100 :
-        (props.votosMassa / props.totalVotos) * 100
+        (votosMilei / totalVotos) * 100 :
+        (votosMassa / totalVotos) * 100
     )
   }
-
 
   const definirPorcentaje = (candidato) => {
     return (
       candidato === 'javier milei' ?
-        (props.votosMilei / props.totalVotos) * 100 :
-        (props.votosMassa / props.totalVotos) * 100
+        (votosMilei / totalVotos) * 100 :
+        (votosMassa / totalVotos) * 100
     )
 
   }
 
-  porcentaje = props.totalVotos === 0 ?
-    0 : definirPorcentaje(props.nombre)
+  porcentaje = totalVotos === 0 ?
+    0 : definirPorcentaje(nombre)
 
   return (
     <div className='contenedor-candidato'>
       <div className="nombre-votos-contenedor">
-        <h2 className="nombre-candidato">{props.nombre}</h2>
+        <h2 className="nombre-candidato">{nombre}</h2>
         <h3 className="votosporpartido">
-          {props.nombre === 'javier milei' ?
-            props.votosMilei : props.votosMassa} {(props.votosMilei || props.votosMassa) > 1 || props.votosMilei || props.votosMassa === 0 ? 'votos' : 'voto'}</h3>
+          {nombre === 'javier milei' ?
+            votosMilei : votosMassa} {(votosMilei || votosMassa) > 1 || votosMilei || votosMassa === 0 ? 'votos' : 'voto'}</h3>
       </div>
       <div className="contenedor-partido">
-        <button className="contenedor-imagen">
-          <img className="imagen-partido " src={props.imagen} alt="" />
-        </button>
+        <div className="contenedor-imagen">
+          <img className="imagen-partido " src={imagen} alt="" />
+        </div>
         <div className="contenedor-barraporcentual">
           <h3>{porcentaje.toFixed(1)}%</h3>
           <motion.div
             className={
-              props.nombre === "javier milei"
+              nombre === "javier milei"
                 ? "barraporcentual lalibertadavanza"
                 : "barraporcentual unionporlapatria"
             }
-            style={{ width: `${definirCandidato(props.nombre)}%` }}
+            style={{ width: `${definirCandidato(nombre)}%` }}
             initial={{ width: '0%' }}
             transition={{ duration: .25, ease: "backInOut" }}
             animate={{ width: `${porcentaje}%` }}
           >
-            {/* <motion.div className="">
-              key={props.totalVotos}
-              initial={{ backgroundColor : 'green' }}
-              animate={{ backgroundColor : 'red'}}
-              exit={{ backgroundColor : 'transparent' }}
-              transition={{ duration: .1 }}
-            </motion.div> */}
+            <div className={nombre === id ? 'expansion animacionexpansion' : 'expansion'}></div>
           </motion.div>
         </div>
       </div>
