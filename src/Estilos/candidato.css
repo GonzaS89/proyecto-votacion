@@ -113,7 +113,7 @@
 }
 
 .animacionexpansion{
-    animation: expandirondavoto .5s ease-in;
+    animation: expandirondavoto .4s ease-in;
 }
 
 @keyframes expandirondavoto{

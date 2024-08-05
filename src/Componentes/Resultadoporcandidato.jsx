@@ -1,9 +1,9 @@
-import { React , useState , useEffect } from "react";
+import { React } from "react";
 import { motion } from 'framer-motion';
 import "../Estilos/candidato.css";
 
 
-const Resultadoporcandidato = ( {nombre,imagen,id,totalVotos,votosMilei,votosMassa} ) => {
+const Resultadoporcandidato = ( {nombre,imagen,totalVotos,votosMilei,votosMassa} ) => {
 
   let porcentaje;
 
@@ -21,8 +21,8 @@ const Resultadoporcandidato = ( {nombre,imagen,id,totalVotos,votosMilei,votosMas
         (votosMilei / totalVotos) * 100 :
         (votosMassa / totalVotos) * 100
     )
-
   }
+
 
   porcentaje = totalVotos === 0 ?
     0 : definirPorcentaje(nombre)
@@ -40,7 +40,7 @@ const Resultadoporcandidato = ( {nombre,imagen,id,totalVotos,votosMilei,votosMas
           <img className="imagen-partido " src={imagen} alt="" />
         </div>
         <div className="contenedor-barraporcentual">
-          <h3>{porcentaje.toFixed(1)}%</h3>
+          <h3>{porcentaje.toFixed(2)}%</h3>
           <motion.div
             className={
               nombre === "javier milei"
@@ -51,9 +51,7 @@ const Resultadoporcandidato = ( {nombre,imagen,id,totalVotos,votosMilei,votosMas
             initial={{ width: '0%' }}
             transition={{ duration: .25, ease: "backInOut" }}
             animate={{ width: `${porcentaje}%` }}
-          >
-            <div className={nombre === id ? 'expansion animacionexpansion' : 'expansion'}></div>
-          </motion.div>
+          ></motion.div>
         </div>
       </div>
     </div>

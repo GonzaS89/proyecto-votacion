@@ -32,6 +32,19 @@ const Pantallavotacion = () => {
         setVotosMassa(votosMassa + 1);
       }
 
+
+      const votosIngresadosMilei = e => {
+        e.target.value === '' ?
+        setVotosMilei(0) :
+        setVotosMilei(parseInt(e.target.value))
+      }
+
+      const votosIngresadosMassa = e => {
+        e.target.value === '' ? 
+        setVotosMassa(0) :
+        setVotosMassa(parseInt(e.target.value))
+      }
+
       // useEffect(() => {
       //   totalVotos > 0 &&
       //   setCondicionVotosTotales(true);
@@ -67,8 +80,8 @@ const Pantallavotacion = () => {
           </div>
         </>
         <>
-          {/* <Totaldevotantes 
-          totalVotos = {totalVotos}/> */}
+          <input type="numer" onChange={votosIngresadosMilei}/>
+          <input type="numer" onChange={votosIngresadosMassa}/>
         </>
       </div>
     )
